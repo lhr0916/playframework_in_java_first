@@ -25,7 +25,7 @@ public class Application extends Controller {
 
     public Result find(String id) {
         AdminUser adminUser = adminUserRepository.findById(id);
-        return ok("names: " + adminUser.id);
+        return ok(user.render(adminUser));
     }
 
     public Result findAll(){

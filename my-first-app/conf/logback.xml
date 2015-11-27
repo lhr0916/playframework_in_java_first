@@ -28,20 +28,6 @@
   </appender>
   <!-- by me -->
 
-  <!-- by me for sentry -->
-  <!--<appender name="Sentry" class="net.kencochrane.raven.logback.SentryAppender">-->
-    <!--<dsn>-->
-      <!--http://61e0622f6bd24b1284ffb82172f3ae35:2ec301447350448f9d0b192f9a6805b6@sentry.iwilab.com/61-->
-    <!--</dsn>-->
-    <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
-      <!--<level>ERROR</level>-->
-      <!--<onMatch>ACCEPT</onMatch>-->
-      <!--<onMismatch>DENY</onMismatch>-->
-    <!--</filter>-->
-  <!--</appender>-->
-  <!-- by me for sentry -->
-
-
   <logger name="play" level="INFO" />
   <logger name="application" level="DEBUG" />
 

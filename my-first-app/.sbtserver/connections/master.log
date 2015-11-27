@@ -1,0 +1,10 @@
+New log file opened at Thu Nov 26 17:24:36 KST 2015 by 11108@catherineui-MacBook-Pro.local
+Taking next connection to: 51997
+New client attempting to connect on port: 51998-51997
+  Address = /172.26.119.147:51997
+This client on port 51998 has uuid 631a7d66-76c9-4919-8ac6-dc949d101c44 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-631a7d66-76c9-4919-8ac6-dc949d101c44
+Taking next connection to: 51997
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 51997

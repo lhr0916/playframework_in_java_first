@@ -1,0 +1,52 @@
+<configuration>
+    
+  <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%coloredLevel - %logger - %message%n%xException</pattern>
+      <!--<pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%-4level] [%replace(%class{0}){'\$.*',''}] %msg %n</pattern>-->
+    </encoder>
+  </appender>
+
+  <!--
+    The logger name is typically the Java/Scala package name.
+    This configures the log level to log at for a package and its children packages.
+  -->
+  <!-- by me for file append -->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${application.home}/logs/application.log</file>
+    <append>true</append>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${application.home}/logs/%d{yyyyMM,aux}/application.log.%d.zip</fileNamePattern>
+      <maxHistory>360</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <!--pattern>[%d{HH:mm:ss.SSS}][%-4level][%logger{10}] %msg%n</pattern-->
+      <pattern>[%d{yyyy-MM-dd HH:mm:ss}] [%-4level] [%replace(%class{0}){'\$.*',''}] %msg %n</pattern>
+    </encoder>
+  </appender>
+  <!-- by me -->
+
+  <!-- by me for sentry -->
+  <!--<appender name="Sentry" class="net.kencochrane.raven.logback.SentryAppender">-->
+    <!--<dsn>-->
+      <!--http://61e0622f6bd24b1284ffb82172f3ae35:2ec301447350448f9d0b192f9a6805b6@sentry.iwilab.com/61-->
+    <!--</dsn>-->
+    <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+      <!--<level>ERROR</level>-->
+      <!--<onMatch>ACCEPT</onMatch>-->
+      <!--<onMismatch>DENY</onMismatch>-->
+    <!--</filter>-->
+  <!--</appender>-->
+  <!-- by me for sentry -->
+
+
+  <logger name="play" level="INFO" />
+  <logger name="application" level="DEBUG" />
+
+  <root level="ERROR">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
